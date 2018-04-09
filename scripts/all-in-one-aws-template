@@ -1,0 +1,82 @@
+launch ec2 instance --> i.e,  t2.xlarge
+
+add secondary disk for docker -- 50 GB
+
+add/change route 53 with the ip's for your server, i.e.,   
+* .subtest.ocppoc.com = public IP of the server you just started
+  
+console.subtest.ocppoc.com = public IP of the server you just started
+
+Make sure the security group you are using for your server allows inbound access to 8443
+
+sudo su - (become root)
+
+subscription-manager unregister
+subscription-manager clean
+subscription-manager register --username USERNAME --password PASSWORD
+subscription-manager list --available > pool-list.txt
+vi pool-list.txt --> search for Red Hat OpenShift Container Platform --> get PoolID from subscription
+subscription-manager attach --pool=YOURPOOLID
+
+subscription-manager repos --disable="*"
+yum-config-manager --disable \*
+
+subscription-manager repos \
+    --enable="rhel-7-server-rpms" \
+    --enable="rhel-7-server-extras-rpms" \
+    --enable="rhel-7-server-ose-3.7-rpms" \
+    --enable="rhel-7-fast-datapath-rpms"
+
+yum install firewalld
+firewall-cmd --set-default-zone trusted
+
+rm -rf openshift-origin-client-tools*
+
+yum install -y atomic atomic-openshift-clients
+
+yum install docker -y && systemctl enable docker
+sed -i '/# INSECURE_REGISTRY/s/# INSECURE_REGISTRY/INSECURE_REGISTRY/' /etc/sysconfig/docker; 
+sed -i "s/--selinux-enabled/--selinux-enabled --insecure-registry\ 172\.30\.0\.0\\/16/" /etc/sysconfig/docker
+
+********************************************
+fdisk -l --> To find out location of extra disk, i.e., --> Disk /dev/xvdf: 53.7 GB
+
+use result from fdisk lookup to populate your Docker_dev variablae --> export DOCKER_DEV=xvdf
+
+sudo cat <<EOF > /etc/sysconfig/docker-storage-setup
+DEVS=$DOCKER_DEV
+VG=docker-vg
+WIPE_SIGNATURES=true
+EOF
+
+sudo docker-storage-setup
+sudo systemctl start docker
+
+export WILDCARD=acme.ocppoc.com (example domain)
+export OCP_USER=ocpadmin (example username)
+
+*****************************************
+start up
+
+oc cluster up --metrics=true --logging=true --public-hostname console.$WILDCARD --routing-suffix $WILDCARD --host-data-dir=ocpdata --host-config-dir=ocpconfig --use-existing-config
+
+********************************************
+ONLY if doing an Origin Install
+
+export PACKAGE_LINK=https://github.com/openshift/origin/releases/download/v3.7.2/openshift-origin-client-tools-v3.7.2-282e43f-linux-64bit.tar.gz
+
+yum install wget -y && cd ~ && wget $PACKAGE_LINK
+mkdir octool && tar -xzvf openshift-origin-client-tools*.tar.gz -C octool
+cp -f octool/openshift-origin-client-tools*/oc /usr/bin && rm -rf octool
+
+*****************************************
+start up
+
+export WILDCARD=subtest.ocppoc.com (enter what you want for your domain -- can also link to Route53)
+oc cluster up --metrics=true --logging=true --public-hostname console.$WILDCARD --routing-suffix $WILDCARD --host-data-dir=ocpdata --host-config-dir=ocpconfig --use-existing-config
+
+*****************************************
+
+
+
+
