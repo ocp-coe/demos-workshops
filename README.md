@@ -6,7 +6,7 @@ Environment Recommendations
 
 Depending on the complexity of your demos you will need to assess the corresponding environment you will need to fully demonstrate the capabilities of OpenShift.  Below are the most commond and recommended ways for building/using OpenShift installs.
 
-1) ![CDK -- Container Development Kit](http://developers.redhat.com/products/cdk/overview/ "CDK -- Container Development Kit") 
+1) [CDK -- Container Development Kit](http://developers.redhat.com/products/cdk/overview/) 
 Best for localized demos that don't require extensive resources or infracture demos like clustering, etc.
 
 2) oc cluster up
