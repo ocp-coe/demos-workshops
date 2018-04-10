@@ -19,10 +19,10 @@ Depending on the complexity of your demos you will need to assess the correspond
 Best Practices
 ------------
 
-For the more advanced demos it is usually advisable to fork the demos to your local git repo so you can modify and interact with the source code.
+* For the more advanced demos it is usually advisable to fork the demos to your local git repo so you can modify and interact with the source code.
 	* Level 3 -- Complex
 		* Coolstore Demo -- 
 
-Level 1
-These are intended to quickly show a customer a deployment leveraging core templates and images with associated quick start demos
+	* Level 2 
+		* These are intended to quickly show a customer a deployment leveraging core templates and images with associated quick start demos
 
