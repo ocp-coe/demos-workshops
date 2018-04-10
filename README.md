@@ -20,7 +20,7 @@ Best Practices
 ------------
 
 For the more advanced demos it is usually advisable to fork the demos to your local git repo so you can modify and interact with the source code.
-	*Level 3 -- Complex
+	* Level 3 -- Complex
 		* Coolstore Demo -- 
 
 Level 1
