@@ -26,6 +26,7 @@ Best Practices
 	
 	* Level 2 (Mid Level) -- best used to showcase deployment options, i.e., BlueGreen, Canary, etc., to both developers and operations.
 		* [BlueGreen](https://github.com/sclorg/nodejs-ex) -- This is an example demo that imports a yaml template file instead of the typical bundled templates to show developers additional flexibility for creating solutions and embedding Jenkins pipelines with their applications.
+
 ![BlueGreen -- Jenkins pipeline demo](docs/images/bluegreen-arch.png?raw=true "BlueGreen -- Jenkins pipeline demo")
 
 
