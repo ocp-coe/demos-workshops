@@ -23,10 +23,9 @@ Best Practices
 	* Level 3 (Complex) -- best used on environments that have larger resources that can accommodate the Dev-Prod functionality.  This [link](https://github.com/jbossdemocentral/coolstore-microservice/tree/1.2.x/openshift/scripts) defines your deployment options.
 		* [Coolstore Demo](https://github.com/jbossdemocentral/coolstore-microservice/) -- This is an example demo showing a retail store consisting of several microservices based on Red Hat OpenShift Application Runtimes -- RHOAR (Spring Boot, WildFly Swarm, Vert.x, JBoss EAP and Node.js) deployed to OpenShift.
 ![Cool Store Microservice Demo -- Architecture Diagram](docs/images/coolstore-arch-diagram.png?raw=true "Cool Store Microservice Demo -- Architecture Diagram")
-
-
+	
 	* Level 2 (Mid Level) -- best used to showcase deployment options, i.e., BlueGreen, Canary, etc., to both developers and operations.
-                * [BlueGreen](https://github.com/sclorg/nodejs-ex) -- This is an example demo that imports a yaml template file instead of the typical bundled templates to show developers additional flexibility for creating solutions and embedding Jenkins pipelines with their applications.
+		* [BlueGreen](https://github.com/sclorg/nodejs-ex) -- This is an example demo that imports a yaml template file instead of the typical bundled templates to show developers additional flexibility for creating solutions and embedding Jenkins pipelines with their applications.
 ![BlueGreen -- Jenkins pipeline demo](docs/images/bluegreen-arch.png?raw=true "BlueGreen -- Jenkins pipeline demo")
 
 
