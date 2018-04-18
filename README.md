@@ -30,5 +30,5 @@ Best Practices
 
 
 	* Level 1 (Entry Level)
-		* These are intended to quickly show a customer a deployment leveraging core templates and images with associated quick start demos
+		* These are intended to quickly show a customer a deployment leveraging core templates and images with associated quick start demos that are included with OpenShift.
 
