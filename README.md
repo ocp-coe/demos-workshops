@@ -22,7 +22,7 @@ Best Practices
 * For the more advanced demos it is usually advisable to fork the demos to your local git repo so you can modify and interact with the source code.
 	* Level 3 -- Complex
 		* [Coolstore Demo](https://github.com/jbossdemocentral/coolstore-microservice/) -- This is an example demo showing a retail store consisting of several microservices based on Red Hat OpenShift Application Runtimes -- RHOAR (Spring Boot, WildFly Swarm, Vert.x, JBoss EAP and Node.js) deployed to OpenShift.
-![Cool Store Microservice Demo -- Architecture Diagram](docs/images/coolstore-arch.png?raw=true "Cool Store Microservice Demo -- Architecture Diagram")
+![Cool Store Microservice Demo -- Architecture Diagram](docs/images/coolstore-arch-diagram.png?raw=true "Cool Store Microservice Demo -- Architecture Diagram")
 
 
 	* Level 2 
