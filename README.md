@@ -32,3 +32,9 @@ Best Practices
 	* Level 1 (Entry Level)
 		* These are intended to quickly show a customer a deployment leveraging core templates and images with associated quick start demos that are included with OpenShift.
 
+# Workshops
+The primary location for workshops should be this git repo authored by the [Tiger Team](https://github.com/RedHatWorkshops/openshiftv3-workshop/).
+
+Environment Recommendations
+-------------
+One of the main problems with workshops/labs is getting the client tools to the customers and installed on their computers prior to the engagement.  This [link](https://github.com/RedHatWorkshops/openshiftv3-workshop/blob/master/0-Setting-up-client-tools.adoc#setting-up-client-tools\) is to the first lab that has details and links on obtaining and installing the oc client tools needed for all of the labs and workshopts.  It is highly recommended that you share this with customers prior to the workshops if possilbe to try and minimize the time spent installing the oc tools.
