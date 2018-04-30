@@ -8,6 +8,7 @@ Depending on the complexity of your demos you will need to assess the correspond
 
 1) [CDK -- Container Development Kit](http://developers.redhat.com/products/cdk/overview/) 
 	* Best for localized demos that don't require extensive resources or infracture demos like clustering, etc.
+	* [One Click Installer](https://github.com/ocp-coe/demos-workshops/blob/master/docs/downloads/devsuite-2.3.0-GA-installer-mac.dmg)
 
 2) [oc cluster up](scripts/all-in-one-aws-template?raw=true)
 	* Typically installed as an "all-in-one" deployment and when leveraging the Origin client tools can demonstrate the latest releases.  The steps for installing are itemized in this script.
