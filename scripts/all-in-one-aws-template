@@ -14,8 +14,8 @@ sudo su - (become root)
 subscription-manager unregister
 subscription-manager clean
 subscription-manager register --username USERNAME --password PASSWORD
-subscription-manager list --available > pool-list.txt
-vi pool-list.txt --> search for Red Hat OpenShift Container Platform --> get PoolID from subscription
+subscription-manager list --available --matches 'Red Hat OpenShift Container Platform' | egrep -e "Subscription Name" -e "Pool ID" -e "Available"
+Optain the PoolID from the output from the command above
 subscription-manager attach --pool=YOURPOOLID
 
 subscription-manager repos --disable="*"
